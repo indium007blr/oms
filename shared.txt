@@ -10,6 +10,12 @@ IPv4 Address. . . . . . . . . . . : 10.10.124.105
 http://10.10.124.105.:9090/api/v1/oms/stock/1
 http://10.10.124.105.:9090/api/v1/oms/stocks
 
+{
+    "order_item": "Honda",
+    "order_quantity": 4000,
+    "order_type":"buy",
+    "order_status":"pending"
+}
 
 ===myorders
 import { useEffect, useState } from "react";
