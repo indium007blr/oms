@@ -2,3 +2,4 @@ insert into order (order_item,order_quantity,order_status,order_type,order_id) v
 select o1_0.order_id,o1_0.order_item,o1_0.order_quantity,o1_0.order_status,o1_0.order_type from order o1_0
 git config --global user.email "blr0425ha007@indium.tech"
 git config --global user.name "blr0425ha007"
+http://localhost:9090/api/v1/oms/orders
