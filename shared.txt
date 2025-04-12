@@ -7,6 +7,10 @@ http://localhost:9090/api/v1/oms/stocks
 http://localhost:9090/api/v1/oms/stock/1
 for stock api use , below ip
 IPv4 Address. . . . . . . . . . . : 10.10.124.105 
+http://10.10.124.105.:9090/api/v1/oms/stock/1
+http://10.10.124.105.:9090/api/v1/oms/stocks
+
+
 ===myorders
 import { useEffect, useState } from "react";
 
