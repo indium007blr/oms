@@ -4,15 +4,38 @@
     background-color: aqua;
     align-items: center;
     text-align: center;
-    display: flex;
-    flex-direction: row;
-
-    h1 {
-        font-size: 1rem;
-        color: red;
-    }
+    align-content: center;
 }
-table, th, td {
+
+h1 {
+    color: rgb(64, 0, 255);
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+h2 {
+    color: chocolate;
+}
+
+table {
+    color: green;
+}
+
+th {
+    color: #0a1434;
+}
+
+table,
+th,
+td {
     border: 1px solid black;
     border-collapse: collapse;
-  }
+    padding: 5px;
+}
+
+.tcenter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
