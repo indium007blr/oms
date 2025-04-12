@@ -57,3 +57,48 @@ function App() {
 }
 
 export default App;
+=====stocks
+import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://localhost:9090/api/v1/oms/stocks")
+      .then((response) => response.json())
+      .then((json) => setUsers(json))
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div className="App">
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <>
+          <h1>My Orders</h1>
+          <table border={1}>
+            <tr>
+              <th>Stock Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+            </tr>
+            {users.map((user) => (
+              <tr key={user.stockId}>
+                <td>{user.stockName}</td>
+                <td>{user.stock_quantity}</td>
+                <td>{user.stockPrice}</td>
+              </tr>
+            ))}
+          </table>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default App;
+
