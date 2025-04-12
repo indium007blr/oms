@@ -2,3 +2,58 @@ insert into order (order_item,order_quantity,order_status,order_type,order_id) v
 select o1_0.order_id,o1_0.order_item,o1_0.order_quantity,o1_0.order_status,o1_0.order_type from order o1_0
 git config --global user.email "blr0425ha007@indium.tech"
 git config --global user.name "blr0425ha007"
+http://localhost:9090/api/v1/oms/orders
+http://localhost:9090/api/v1/oms/stocks
+http://localhost:9090/api/v1/oms/stock/1
+for stock api use , below ip
+IPv4 Address. . . . . . . . . . . : 10.10.124.105 
+http://10.10.124.105.:9090/api/v1/oms/stock/1
+http://10.10.124.105.:9090/api/v1/oms/stocks
+
+
+===myorders
+import { useEffect, useState } from "react";
+
+function App() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    fetch("http://10.10.125.39:9090/api/v1/oms/orders")
+      .then((response) => response.json())
+      .then((json) => setUsers(json))
+      .finally(() => {
+        setLoading(false);
+      });
+  }, []);
+
+  return (
+    <div className="App">
+      {loading ? (
+        <div>Loading...</div>
+      ) : (
+        <>
+          <h1>My Orders</h1>
+          <table border={1}>
+            <tr>
+              <th>Stock Name</th>
+              <th>Order Status</th>
+              <th>Quantity</th>
+              <th>Order Status</th>
+            </tr>
+            {users.map((user) => (
+              <tr key={user.order_id}>
+                <td>{user.order_item}</td>
+                <td>{user.order_type}</td>
+                <td>{user.order_quantity}</td>
+                <td>{user.order_status}</td>
+              </tr>
+            ))}
+          </table>
+        </>
+      )}
+    </div>
+  );
+}
+
+export default App;
