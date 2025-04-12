@@ -5,6 +5,8 @@ git config --global user.name "blr0425ha007"
 http://localhost:9090/api/v1/oms/orders
 http://localhost:9090/api/v1/oms/stocks
 http://localhost:9090/api/v1/oms/stock/1
+for stock api use , below ip
+IPv4 Address. . . . . . . . . . . : 10.10.124.105 
 ===myorders
 import { useEffect, useState } from "react";
 
